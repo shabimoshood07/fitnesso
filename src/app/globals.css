@@ -5,5 +5,5 @@
 
 
 .nav-links {
-  @apply text-[14px] px-[20px] py-[10px] leading-[1.6em] capitalize;
+  @apply text-[14px] lg:px-[20px] lg:py-[10px] p-[20px] leading-[1.6em] capitalize;
 }
