@@ -21,31 +21,31 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="flex">
+        <div className="flex justify-between">
           {/* NAV LINKS */}
           <ul
-            className={`items-center flex-col flex fixed -z-10 top-0 h-screen w-screen  border px-[50px] pt-[100px] pb-[50px] bg-[#cfddee] duration-500 ease-in-out ${
+            className={`items-center flex-col flex fixed -z-10 top-0 h-screen w-screen min-[480px]:w-1/2   px-[50px] pt-[100px] pb-[50px] bg-[#cfddee] duration-500 ease-in-out lg:relative lg:h-fit lg:flex-row lg:p-0 lg:w-max lg:bg-transparent lg:left-auto lg:right-auto  lg:flex-1 lg:z-0 ${
               !show ? toggleNavClass : "right-0"
             } `}
           >
             <li className="nav-links">
               <Link href="#">About</Link>
             </li>
-            <li className="nav-links">
+            <li className="nav-links min-w-max">
               <Link href="#">Free Workouts</Link>
             </li>
             <li className="nav-links">
               <Link href="#">Shop</Link>
             </li>
 
-            <button className=" w-full py-[12px] pl-[20px] pr-[20px] bg-[#081158] font-[500] min-w-[160px] uppercase rounded-[6px] font-['Sato'] text-white tracking-[2px]  items-center justify-start hover:duration-500 hover:pl-[40px] hover:-translate-y-[2px] ease-out hover:opacity-80 text-center relative">
+            <button className="relative w-full  py-[12px] pl-[20px] pr-[20px] bg-[#081158] font-[500] min-w-[160px] uppercase rounded-[6px] font-['Sato'] text-white tracking-[2px]  items-center justify-start  hover:pl-[40px] hover:py-[13px] ease-out hover:opacity-80 text-center duration-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-5 h-5 absolute left-0"
+                className="w-5 h-5 float-left"
               >
                 <path
                   strokeLinecap="round"
@@ -58,15 +58,17 @@ const Navbar = () => {
           </ul>
           <div className="flex justify-between items-center">
             <button
-              className={`${show?"bg-[#081158]":""} p-[10px] lg:hidden `}
+              className={`${show ? "bg-[#081158]" : ""} p-[10px] lg:hidden `}
               onClick={toggleNavFunt}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className={`${show? "text-white":"text-[#081158]"} w-5 h-5 font-extrabold`} 
-                >
+                className={`${
+                  show ? "text-white" : "text-[#081158]"
+                } w-[24px] h-[24px] font-extrabold`}
+              >
                 <path
                   fillRule="evenodd"
                   d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
@@ -74,7 +76,7 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-            <button className="p-[10px] flex items-center justify-center">
+            <button className="p-[10px] flex items-center justify-center ml-[20px]">
               <svg
                 xmlns="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80894f63c557f524ed96d1_Icon%20%2313.svg"
                 viewBox="0 0 24 24"

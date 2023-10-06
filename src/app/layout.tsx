@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${redHatDispaly.className} bg-[#dddddd] text-[#081158]`}
+        className={`${redHatDispaly.className} bg-[#eef0f4]  text-[#081158]`}
       >
         <Navbar />
         {children}
