@@ -1,15 +1,18 @@
-import Image from "next/image";
-import { parmanentMarker } from "./layout";
 
+import { parmanentMarker } from "./layout";
+import { motion } from "framer-motion";
 export default function Home() {
   return (
     <div className=" py-[75px] md:py-[100px] xl:py-[150px] w-[95%] mx-auto grid gap-x-[50px]  gap-y-[25px] md:grid-cols-2  items-start max-w-[1450px] ">
       <div>
-        <h1
+        <motion.h1
           className={`${parmanentMarker.className} text-[30px] md:text-[40px] xl:text-[64px] text-center tracking-[1px] leading-[1.1em] text-[#8ea5a0] uppercase`}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2 }}
         >
           sandra lyons
-        </h1>
+        </motion.h1>
         <div className="bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80a6e90c4ef4bcb4fd3071_Rectangle%20439.png')] h-[300px] min-[479px]:h-[400px] mx-auto w-full bg-no-repeat bg-cover bg-top  md:h-[700px]"></div>
       </div>
 
@@ -28,16 +31,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
-
-{
-  /* <div>
-          <Image
-            src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80a6e90c4ef4bcb4fd3071_Rectangle%20439.png"
-            width={500}
-            height={900}
-            alt="hero"
-            className="rounded-xl"
-          />
-        </div> */
 }
