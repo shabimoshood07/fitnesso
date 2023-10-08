@@ -6,7 +6,7 @@ import { useGlobalContext } from "@/lib/context";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const toggleNavClass = "right-[-500px]";
+  const toggleNavClass = "-right-[500%]";
   const toggleNavFunt = () => setShow(!show);
   const { setShowCart, showCart } = useGlobalContext();
   return (
