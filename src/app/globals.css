@@ -1,9 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 .nav-links {
   @apply text-[14px] lg:px-[20px] lg:py-[10px] p-[20px] leading-[1.6em] capitalize text-center;
+}
+
+.btn {
+  @apply w-full leading-[1.6em] font-[11px]  py-[12px] pl-[40px] pr-[20px] bg-[#081158]  min-w-[160px] uppercase rounded-[6px] bg-[20px] text-white tracking-[2px]  items-center justify-start  hover:pl-[45px] hover:-translate-y-1 ease-out hover:opacity-80 text-center duration-500 bg-[url('https://assets.website-files.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')] bg-no-repeat  bg-[auto,15px];
+}
+
+@media only screen and (min-width: 480px) {
+  .cart {
+    position: fixed;
+    height: 332px;
+    width: unset;
+    top: 60px;
+    right: 35px;
+    left: unset;
+    border-radius: 10px;
+    max-width: 480px;
+    width: 320px;
+  }
 }

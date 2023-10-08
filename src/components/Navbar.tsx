@@ -2,12 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useGlobalContext } from "@/lib/context";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const toggleNavClass = "right-[-500px]";
   const toggleNavFunt = () => setShow(!show);
-
+  const { setShowCart, showCart } = useGlobalContext();
   return (
     <header className="h-[80px] fixed flex items-center top-0 w-screen">
       <nav className="flex justify-between items-center w-[95%] max-w-[1450px] mx-auto">
@@ -38,21 +39,7 @@ const Navbar = () => {
               <Link href="#">Shop</Link>
             </li>
 
-            <button className="relative w-full  py-[12px] pl-[20px] pr-[20px] bg-[#081158] font-[500] min-w-[160px] uppercase rounded-[6px] font-['Sato'] text-white tracking-[2px]  items-center justify-start  hover:pl-[40px] hover:py-[13px] ease-out hover:opacity-80 text-center duration-500">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-5 h-5 float-left"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
+            <button className="btn">
               book a call
             </button>
           </ul>
@@ -76,7 +63,12 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-            <button className="p-[10px] flex items-center justify-center ml-[20px]">
+
+            {/* Cart */}
+            <button
+              className="p-[10px] flex items-center justify-center lg:ml-[20px]"
+              onClick={() => setShowCart(!showCart)}
+            >
               <svg
                 xmlns="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80894f63c557f524ed96d1_Icon%20%2313.svg"
                 viewBox="0 0 24 24"
