@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 .nav-links {
   @apply text-[14px] lg:px-[20px] lg:py-[10px] p-[20px] leading-[1.6em] capitalize text-center;
@@ -23,4 +22,14 @@
     max-width: 480px;
     width: 320px;
   }
+}
+
+[data-name="online"] {
+  background-image: url("https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80a6e90c4ef4bcb4fd3071_Rectangle%20439.png");
+}
+[data-name="premium"] {
+  background-image: url("https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e8318f6e893cd930956b324_logan-weaver-RBbwGEKBbD8-unsplash.jpg");
+}
+[data-name="free"] {
+  background-image: url("https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e8318706203833a1bd11fad_logan-weaver-pD5kSwtNgMc-unsplash.jpg");
 }

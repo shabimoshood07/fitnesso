@@ -5,13 +5,13 @@ const Cart = () => {
   return (
     <div
       className={`${
-        showCart ? "!h-fit" : "!h-0 duration-700 -translate-y-[20px]"
-      } duration-300 overflow-hidden cart fixed top-0 left-0 h-screen w-screen  bg-[#fff]   shadow-xl `}
+        showCart ? "h-screen" : "!h-0 duration-700 -translate-y-[20px]"
+      } duration-500 overflow-hidden cart fixed top-0 left-0 h-screen w-screen flex  bg-[#fff]   shadow-xl `}
     >
       <div
         className={`${
           showCart
-            ? "translate-y-0 opacity-100 transition-transform  duration-300 z-auto"
+            ? "translate-y-0 opacity-100 transition-transform  duration-500 z-auto"
             : "-translate-y-[20px] duration-300 ease-in opacity-0 -z-10 lg:z-0"
         } flex flex-col `}
       >
