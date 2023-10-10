@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useGlobalContext } from "@/lib/context";
+import Cart from "./Cart";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -10,8 +11,8 @@ const Navbar = () => {
   const toggleNavFunt = () => setShow(!show);
   const { setShowCart, showCart } = useGlobalContext();
   return (
-    <header className="h-[80px] fixed flex items-center top-0 w-screen">
-      <nav className="flex justify-between items-center w-[95%] max-w-[1450px] mx-auto">
+    <header className="h-[80px] fixed flex items-center top-0 w-screen z-10">
+      <nav className="flex justify-between items-center w-[95%] max-w-[1450px] mx-auto relative">
         {/* Logo */}
         <Link href="/">
           <Image
@@ -39,9 +40,7 @@ const Navbar = () => {
               <Link href="#">Shop</Link>
             </li>
 
-            <button className="btn">
-              book a call
-            </button>
+            <button className="btn">book a call</button>
           </ul>
           <div className="flex justify-between items-center">
             <button
@@ -83,6 +82,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
+        <Cart />
       </nav>
     </header>
   );

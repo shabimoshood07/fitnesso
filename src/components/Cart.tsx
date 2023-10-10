@@ -5,8 +5,8 @@ const Cart = () => {
   return (
     <div
       className={`${
-        showCart ? "h-screen" : "!h-0 duration-700 -translate-y-[20px]"
-      } duration-500 overflow-hidden cart fixed top-0 left-0 h-screen w-screen flex  bg-[#fff]   shadow-xl `}
+        showCart ? "h-screen" : "!h-0 duration-700 opacity-0 -translate-y-[20px]"
+      } duration-500 overflow-hidden fixed cart  top-0 left-0 z-10 h-screen w-screen flex  bg-[#fff]   shadow-xl `}
     >
       <div
         className={`${

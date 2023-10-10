@@ -61,7 +61,7 @@ const HeroCard = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className={`py-[75px] md:py-[100px] xl:py-[150px]  mx-auto grid gap-x-[50px]  gap-y-[25px] md:grid-cols-2 left-0 right-0 w-[98%] max-w-[1450px]  overflow-hidden absolute -z-10`}
+      className={`py-[75px] md:py-[100px] xl:py-[150px]  mx-auto grid gap-x-[50px]  gap-y-[25px] md:grid-cols-2 left-0 right-0 w-[98%] max-w-[1450px]  overflow-hidden absolute z-10`}
     >
       <div>
         <motion.h1
@@ -76,9 +76,6 @@ const HeroCard = ({
           data-name={details.data}
           className={`rounded-xl relative  h-[300px] min-[479px]:h-[400px] mx-auto w-full bg-no-repeat bg-cover bg-top  md:h-[700px]`}
           initial={{ scale: 1.1, rotate: -10, opacity: 0 }}
-          // transition={{
-          //   duration: 0.6,
-          // }}
           animate={{
             rotate: 0,
             scale: 1,
@@ -87,7 +84,6 @@ const HeroCard = ({
               duration: 0.9,
             },
           }}
-          // transition={{ duration: 0.5 }}
           exit={{
             scale: 1.1,
             rotate: -10,
@@ -132,7 +128,6 @@ const HeroCard = ({
             duration: 0.9,
           },
         }}
-        // transition={{ duration: 0.5 }}
         exit={{
           opacity: 0,
           y: -100,
@@ -140,7 +135,6 @@ const HeroCard = ({
             duration: 0.5,
           },
         }}
-        // viewport={{ once: false }}
       >
         <h3 className="text-[14px] text-left w-full font-[500]  leading-[1.6em] tracking-[1px] mb-[30px] ">
           {details.subheading}
@@ -151,7 +145,7 @@ const HeroCard = ({
         <p className="mb-[30px] max-w-[500px] text-[18px] lg:text-[20px] text-justify leading-[1.8em] font-[400]">
           {details.paragraph}
         </p>
-        <button className="btn !w-fit ">{details.btnText}</button>
+        <button className="btn !w-fit !py-[20px]">{details.btnText}</button>
       </motion.div>
     </motion.div>
   );
@@ -174,41 +168,25 @@ const Hero = () => {
   };
 
   return (
-    <div className=" max-w-[1450px] mx-auto relative">
-      <AnimatePresence>
-        {heroData.map((hero, index) => {
-          if (currentIndex === index)
-            return (
-              <HeroCard
-                key={index}
-                details={{ ...hero, forward, backward }}
-                currentIndex={currentIndex === index}
-              />
-            );
-        })}
-      </AnimatePresence>
-    </div>
+    <section className="bg-[#eef0f4] ">
+      <div className=" max-w-[1450px] mx-auto relative z-[0] min-h-[1000px] lg:min-h-[1100px]  border-4 border-green-500 overflow-hidden">
+        {/* <div className=""> */}
+        <AnimatePresence>
+          {heroData.map((hero, index) => {
+            if (currentIndex === index)
+              return (
+                <HeroCard
+                  key={index}
+                  details={{ ...hero, forward, backward }}
+                  currentIndex={currentIndex === index}
+                />
+              );
+          })}
+        </AnimatePresence>
+        {/* </div> */}
+      </div>
+    </section>
   );
 };
 
 export default Hero;
-
-// {currentIndex == 0 && (
-//   <HeroCard
-//     details={{ ...heroData[currentIndex], forward, backward }}
-//   />
-// )}
-// </AnimatePresence>
-// <AnimatePresence>
-// {currentIndex == 0 && (
-//   <HeroCard
-//     details={{ ...heroData[currentIndex], forward, backward }}
-//   />
-// )}
-// </AnimatePresence>
-// <AnimatePresence>
-// {currentIndex == 0 && (
-//   <HeroCard
-//     details={{ ...heroData[currentIndex], forward, backward }}
-//   />
-// )}

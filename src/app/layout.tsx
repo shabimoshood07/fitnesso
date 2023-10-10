@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Red_Hat_Display, Permanent_Marker } from "next/font/google";
+import { Red_Hat_Display, Permanent_Marker, } from "next/font/google";
 import { AppProvider } from "@/lib/context";
 import Cart from "@/components/Cart";
 
@@ -27,14 +27,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${redHatDispaly.className} ${parmanentMarker.variable} bg-[#eef0f4]  text-[#081158]`}
+        className={`${redHatDispaly.className} ${parmanentMarker.variable}  text-[#081158] overflow-x-hidden`}
       >
         <AppProvider>
           <Navbar />
-          <Cart />
+          {/* <Cart /> */}
           {children}
         </AppProvider>
       </body>
     </html>
   );
 }
+
