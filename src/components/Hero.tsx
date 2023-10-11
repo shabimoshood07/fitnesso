@@ -169,7 +169,7 @@ const Hero = () => {
 
   return (
     <section className="bg-[#eef0f4] ">
-      <div className=" max-w-[1450px] mx-auto relative z-[0] min-h-[1000px] lg:min-h-[1100px]  border-4 border-green-500 overflow-hidden">
+      <div className=" max-w-[1450px] mx-auto relative z-[0] min-h-[1000px] lg:min-h-[1100px] overflow-hidden">
         {/* <div className=""> */}
         <AnimatePresence>
           {heroData.map((hero, index) => {

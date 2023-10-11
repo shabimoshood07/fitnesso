@@ -31,7 +31,6 @@ export default function RootLayout({
       >
         <AppProvider>
           <Navbar />
-          {/* <Cart /> */}
           {children}
         </AppProvider>
       </body>

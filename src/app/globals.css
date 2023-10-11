@@ -17,7 +17,6 @@
     width: unset;
     top: 40px;
     bottom: 0;
-    /* right: 35px; */
     right: 10px;
     left: unset;
     border-radius: 10px;
@@ -28,8 +27,9 @@
 
 .pic-shadow {
   box-shadow: rgba(8, 17, 88, 1) 0px 22px 70px 4px;
-  box-shadow: rgba(8, 17, 88, .5) 0px 30px 90px;
+  box-shadow: rgba(8, 88, 20, 0.4) 0px 0px 50px;
 }
+
 
 [data-name="online"] {
   background-image: url("https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80a6e90c4ef4bcb4fd3071_Rectangle%20439.png");
