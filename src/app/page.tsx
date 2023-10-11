@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import HomeSectionOne from "@/components/HomeSectionOne";
+import HomeSectionTwo from "@/components/HomeSectionTwo";
 
 const Home = () => {
   return (
@@ -7,7 +8,7 @@ const Home = () => {
       <Hero />
       <div className="bg-[#081158] relative z-[5] py-4">
         <div className=" w-[150%] h-[10vh] absolute bg-[#081158] -rotate-2 -top-[35px]  z-[-1]" />
-        <div className=" w-[95%] max-w-[1450px] mx-auto py-[25px] md:py-[60px] grid grid-cols-1 min-[479px]:grid-cols-3 gap-x-[25px] gap-y-[50px] " >
+        <div className=" w-[95%] max-w-[1450px] mx-auto py-[25px] md:py-[60px] grid grid-cols-1 min-[479px]:grid-cols-3 gap-x-[25px] gap-y-[50px] ">
           <div>
             <h1 className="text-[20px] leading-[1.1em] text-[#ffffff] font-[500] text-center mb-[10px] md:text-[30px]  ">
               1900+
@@ -36,6 +37,7 @@ const Home = () => {
         <div className=" w-[150%] h-[10vh] absolute bg-[#081158] -rotate-2 -bottom-[35px]  md:-bottom-[32px] -z-10 " />
       </div>
       <HomeSectionOne />
+      <HomeSectionTwo />
     </div>
   );
 };

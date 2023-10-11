@@ -1,13 +1,6 @@
 "use client";
-import {
-  motion,
-  AnimatePresence,
-  scroll,
-  useScroll,
-  useSpring,
-  useMotionValueEvent,
-} from "framer-motion";
-import { animate } from "framer-motion/dom";
+import { motion, useScroll } from "framer-motion";
+
 import { useRef } from "react";
 const data = [
   {
@@ -41,56 +34,30 @@ const data = [
 ];
 
 const HomeSectionOne = () => {
-  // scroll(("div", { transform: ["none", "rotate(90deg)"] }));
-
-  // scroll(animate("div", { transform: ["none", "rotate(90deg)"] }), {
-  //   source: document.getElementById("scroller"),
-  // });
-
-  // scroll((progress) => {
-  //   progressWheel.style.strokeDasharray = `${progress}, 1`;
-  // });
   const scrollRef = useRef(null);
+  const scrollRef2 = useRef(null);
 
   const { scrollYProgress, scrollY, scrollX, scrollXProgress } = useScroll({
-    container: scrollRef,
+    target: scrollRef,
+    offset: ["start end", "end end"],
   });
-  // const scaleX = useSpring(scrollYProgress);
-
-  // console.log(scrollYProgress);
-
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  //   console.log("Page scroll: ", latest);
-  // });
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Page scroll: ", scrollYProgress);
+  const { scrollYProgress: scrool2 } = useScroll({
+    target: scrollRef2,
+    offset: ["start end", "end end"],
   });
 
-  // useMotionValueEvent(scrollX, "change", (latest) => {
-  //   console.log("Page scroll X: ", latest);
-  // });
+  console.log("opacity", scrollYProgress.get());
 
   return (
-    <section
-      className="py-[95px] md:py-[100px] lg:py-[150px] bg-transparent"
-      ref={scrollRef}
-    >
-      <motion.div
-        className="max-w-[1150px] mx-auto grid grid-cols-1 gap-x-[50px] gap-y-[50px] w-[97%]motion."
-        initial={{ opacity: 1 }}
-      >
+    <section className=" py-[95px] md:py-[100px] lg:py-[150px] bg-transparent">
+      <motion.div className=" max-w-[1150px] mx-auto grid grid-cols-1 gap-x-[50px] gap-y-[50px] w-[97%] ">
         <motion.div
-          className="flex flex-col justify-center items-center"
-          // initial={{ opacity: 0.2 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 1,
-            },
-          }}
-          // viewport={{ once: false }}
+          style={{ opacity: scrollYProgress }}
+          className="flex flex-col justify-center items-center pb-10"
+          initial={{ y: 50 }}
+          whileInView={{ y: 0 }}
+          ref={scrollRef}
+          transition={{ duration: 1 }}
         >
           <motion.h1 className="mb-[30px] max-w-[800px] mx-auto text-center text-[30px] md:text-[40px] lg:text-[64px] leading-[1.1em] font-[500]  ">
             The journey to a healthier body starts right now
@@ -100,10 +67,20 @@ const HomeSectionOne = () => {
           </button>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-x-[50px] gap-y-[50px] min-[768px]:grid-cols-2">
-          {data.map((dat) => {
+        <motion.div
+          className="grid grid-cols-1 gap-x-[50px] gap-y-[50px] min-[768px]:grid-cols-2 relative"
+          initial={{ y: 50 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ opacity: scrool2 }}
+        >
+          <div className="absolute top-0 right-0 h-[30%]" ref={scrollRef} />
+          {data.map((dat, index) => {
             return (
-              <div className="flex flex-col justify-center items-center max-w-[400px] mx-auto ">
+              <div
+                className="flex flex-col justify-center items-center max-w-[400px] mx-auto "
+                key={index}
+              >
                 <div
                   className={`h-[200px] min-[469px]:h-[300px] w-[200px] min-[469px]:w-[300px] my-[30px] mx-auto rounded-xl bg-no-repeat bg-cover bg-center`}
                   style={{
@@ -121,7 +98,7 @@ const HomeSectionOne = () => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
