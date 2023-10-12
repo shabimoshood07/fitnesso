@@ -1,5 +1,7 @@
 import Hero from "@/components/Hero";
+import HomeSectionFour from "@/components/HomeSectionFour";
 import HomeSectionOne from "@/components/HomeSectionOne";
+import HomeSectionThree from "@/components/HomeSectionThree";
 import HomeSectionTwo from "@/components/HomeSectionTwo";
 
 const Home = () => {
@@ -38,6 +40,8 @@ const Home = () => {
       </div>
       <HomeSectionOne />
       <HomeSectionTwo />
+      <HomeSectionThree />
+      <HomeSectionFour />
     </div>
   );
 };

@@ -23,7 +23,7 @@ const heroData = [
     paragraph:
       "I’ve created these premium fitness classes for everyone starting from beginner to advanced level with an in depth FAQ to answer all doubts.",
     image:
-      "https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80a6e90c4ef4bcb4fd3071_Rectangle%20439.png",
+      "https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e8318f6e893cd930956b324_logan-weaver-RBbwGEKBbD8-unsplash.jpg",
     data: "premium",
   },
   {
@@ -34,7 +34,7 @@ const heroData = [
       "With free online classes people who don’t have the time or money to afford a personal coach can make change their lives forever.",
     btnText: "free classes",
     image:
-      "https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80a6e90c4ef4bcb4fd3071_Rectangle%20439.png",
+      "https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e8318706203833a1bd11fad_logan-weaver-pD5kSwtNgMc-unsplash.jpg",
     data: "free",
   },
 ];
@@ -73,8 +73,8 @@ const HeroCard = ({
           {details.heading}
         </motion.h1>
         <motion.div
-          data-name={details.data}
           className={`rounded-xl relative  h-[300px] min-[479px]:h-[400px] mx-auto w-full bg-no-repeat bg-cover bg-top  md:h-[700px]`}
+          style={{ backgroundImage: `url(${details.image})` }}
           initial={{ scale: 1.1, rotate: -10, opacity: 0 }}
           animate={{
             rotate: 0,

@@ -26,17 +26,12 @@
 }
 
 .pic-shadow {
-  box-shadow: rgba(8, 17, 88, 1) 0px 22px 70px 4px;
   box-shadow: rgba(8, 88, 20, 0.4) 0px 0px 50px;
 }
 
+.hover:hover {
+  transform: translateY(-5px) !important ;
+  opacity: 0.4 !important;
+  transition: all ease-out 0.5s !important;
+}
 
-[data-name="online"] {
-  background-image: url("https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80a6e90c4ef4bcb4fd3071_Rectangle%20439.png");
-}
-[data-name="premium"] {
-  background-image: url("https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e8318f6e893cd930956b324_logan-weaver-RBbwGEKBbD8-unsplash.jpg");
-}
-[data-name="free"] {
-  background-image: url("https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e8318706203833a1bd11fad_logan-weaver-pD5kSwtNgMc-unsplash.jpg");
-}

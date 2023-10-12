@@ -37,7 +37,7 @@ const HomeSectionOne = () => {
   const scrollRef = useRef(null);
   const scrollRef2 = useRef(null);
 
-  const { scrollYProgress, scrollY, scrollX, scrollXProgress } = useScroll({
+  const { scrollYProgress } = useScroll({
     target: scrollRef,
     offset: ["start end", "end end"],
   });
@@ -46,7 +46,6 @@ const HomeSectionOne = () => {
     offset: ["start end", "end end"],
   });
 
-  console.log("opacity", scrollYProgress.get());
 
   return (
     <section className=" py-[95px] md:py-[100px] lg:py-[150px] bg-transparent">
