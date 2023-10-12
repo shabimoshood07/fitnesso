@@ -7,7 +7,7 @@ import Cart from "./Cart";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const toggleNavClass = "-right-[500%]";
+  const toggleNavClass = "!w-0 !px-0 overflow-hidden";
   const toggleNavFunt = () => setShow(!show);
   const { setShowCart, showCart } = useGlobalContext();
   return (
@@ -26,8 +26,9 @@ const Navbar = () => {
         <div className="flex justify-between">
           {/* NAV LINKS */}
           <ul
-            className={`items-center flex-col flex fixed -z-10 top-0 h-screen w-screen min-[480px]:w-1/2   px-[50px] pt-[100px] pb-[50px] bg-[#cfddee] duration-500 ease-in-out lg:relative lg:h-fit lg:flex-row lg:p-0 lg:w-max lg:bg-transparent lg:left-auto lg:right-auto  lg:flex-1 lg:z-0 ${
-              !show ? toggleNavClass : "right-0"
+            className={`right-0 items-center flex-col flex fixed -z-10 top-0 h-screen  min-[480px]:w-1/2   px-[50px] pt-[100px] pb-[50px] bg-[#cfddee] duration-500 ease-in-out lg:relative lg:h-fit lg:flex-row lg:p-0 lg:!w-max lg:bg-transparent lg:left-auto lg:right-auto  lg:flex-1 lg:z-0 ${
+              // !show ? toggleNavClass : "right-0"
+              !show ? toggleNavClass : "w-screen"
             } `}
           >
             <li className="nav-links">

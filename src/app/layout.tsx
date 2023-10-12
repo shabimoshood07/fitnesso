@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${redHatDispaly.className} ${parmanentMarker.variable}  text-[#081158] overflow-x-hidden`}
+        className={`${redHatDispaly.className} ${parmanentMarker.variable}  text-[#081158] `}
       >
         <AppProvider>
           <Navbar />

@@ -46,10 +46,12 @@ const HomeSectionOne = () => {
     offset: ["start end", "end end"],
   });
 
-
   return (
     <section className=" py-[95px] md:py-[100px] lg:py-[150px] bg-transparent">
-      <motion.div className=" max-w-[1150px] mx-auto grid grid-cols-1 gap-x-[50px] gap-y-[50px] w-[97%] ">
+      <motion.div
+        className=" max-w-[1150px] mx-auto grid grid-cols-1 gap-x-[50px] gap-y-[50px] w-[97%] "
+        ref={scrollRef2}
+      >
         <motion.div
           style={{ opacity: scrollYProgress }}
           className="flex flex-col justify-center items-center pb-10"
@@ -67,16 +69,15 @@ const HomeSectionOne = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 gap-x-[50px] gap-y-[50px] min-[768px]:grid-cols-2 relative"
+          className="grid grid-cols-1 gap-x-[50px] gap-y-[50px] min-[768px]:grid-cols-2"
           initial={{ y: 50 }}
           whileInView={{ y: 0 }}
           transition={{ duration: 1 }}
           style={{ opacity: scrool2 }}
         >
-          <div className="absolute top-0 right-0 h-[30%]" ref={scrollRef} />
           {data.map((dat, index) => {
             return (
-              <div
+              <motion.div
                 className="flex flex-col justify-center items-center max-w-[400px] mx-auto "
                 key={index}
               >
@@ -94,7 +95,7 @@ const HomeSectionOne = () => {
                 <p className=" mx-auto text-[16px] leading-[1.8em] text-center font-[400]">
                   {dat.paragraph}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </motion.div>
