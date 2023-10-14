@@ -1,23 +1,30 @@
 "use client";
-import { motion, motionValue, useScroll } from "framer-motion";
+import {
+  motion,
+  motionValue,
+  useInView,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import { useRef } from "react";
 
 const HomeSectionFive = () => {
   const conatiner = useRef(null);
-  const { scrollYProgress } = useScroll({
-    // container: conatiner,
-    
+  const isInView = useInView(conatiner, { once: false });
+
+  const { scrollYProgress, scrollY } = useScroll({
     target: conatiner,
-    // offset: ["end end", "start start"]
     offset: ["start end", "end end"],
   });
+
+
   return (
-    <section
-      className="relative pt-[100px] pb-[75px] md:pt-[200px] md:pb-[100px] lg:pt-[250px] lg:pb-[150px]  border-2 border-yellow-300"
-      ref={conatiner}
-    >
+    <section className="relative pt-[100px] pb-[75px] md:pt-[200px] md:pb-[100px] lg:pt-[250px] lg:pb-[150px]">
       <div className="absolute -z-10 bottom-0 right-0 w-[95vw] md:w-[50vw] md:h-[60%] md:top-[100px] lg:top-[150px] h-[40%] bg-[#081158] bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e832c916203834f1ed18f1c_Group%20117.svg')] bg-[bottom_right] bg-no-repeat" />
-      <div className="w-[95%] max-w-[1450px] mx-auto grid md:grid-cols-2 gap-x-[50px] gap-y-[50px] md:gap-x-[100px] md:gap-y-[100px]  ">
+      <motion.div
+        className="w-[95%] max-w-[1450px] mx-auto grid md:grid-cols-2 gap-x-[50px] gap-y-[50px] md:gap-x-[100px] md:gap-y-[100px] "
+        ref={conatiner}
+      >
         <div>
           <h2 className=" mb-[30px] text-[30px] md:text-[40px] lg:text-[64px] leading-[1.1em] font-[500] max-w-[600px] ">
             Who can benefit from a fully custom online fitness plan and
@@ -41,12 +48,13 @@ const HomeSectionFive = () => {
 
         <motion.div
           className="bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80cc35d802d60b338a8553_guillaume-bolduc-jWvUCKFIXbI-unsplash.jpg')] bg-cover bg-no-repeat bg-center w-full md:max-w-[500px] h-[400px] md:h-auto rounded-lg mx-auto"
-          style={{ opacity: scrollYProgress }}
-          initial={{ y: 50 }}
-          whileInView={{ y: 0, transition: { duration: 0.8 } }}
-          exit={{ y: 50 }}
+          style={{
+            transform: isInView ? "none" : "translateY(100px)",
+            opacity: isInView ? scrollYProgress : 0,
+            transition: "transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+          }}
         ></motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

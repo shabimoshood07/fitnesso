@@ -2,8 +2,12 @@ import Hero from "@/components/Hero";
 import HomeSectionFive from "@/components/HomeSectionFive";
 import HomeSectionFour from "@/components/HomeSectionFour";
 import HomeSectionOne from "@/components/HomeSectionOne";
+import HomeSectionSeven from "@/components/HomeSectionSeven";
+import HomeSectionSix from "@/components/HomeSectionSix";
 import HomeSectionThree from "@/components/HomeSectionThree";
 import HomeSectionTwo from "@/components/HomeSectionTwo";
+import HomeSectionEight from "@/components/HomeSectionEight";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   return (
@@ -44,6 +48,10 @@ const Home = () => {
       <HomeSectionThree />
       <HomeSectionFour />
       <HomeSectionFive />
+      <HomeSectionSix />
+      <HomeSectionSeven />
+      <HomeSectionEight />
+      <Footer />
     </div>
   );
 };

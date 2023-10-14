@@ -10,6 +10,11 @@
   @apply w-full leading-[1.6em] text-[14px]  py-[12px]  pl-[40px] pr-[20px] bg-[#081158]  min-w-[160px] uppercase rounded-[6px] bg-[20px] text-white tracking-[2px]  items-center justify-start  hover:pl-[45px] hover:-translate-y-1 ease-out hover:opacity-80 text-center duration-500 bg-[url('https://assets.website-files.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')] bg-no-repeat  bg-[auto,15px];
 }
 
+.section-btn {
+  @apply pl-[13px] text-[14px] leading-[1.6em] tracking-[2px] font-[500] py-[20px] px-[20px] min-w-[200px] rounded-[6px] text-[#081158] w-fit bg-white bg-no-repeat bg-[20px]  bg-[auto,15px] 
+             hover:pl-[20px] hover:opacity-50 duration-500 hover:bg-[30px] hover:-translate-y-1 uppercase;
+}
+
 @media only screen and (min-width: 480px) {
   .cart {
     position: absolute;
@@ -31,7 +36,31 @@
 
 .hover:hover {
   transform: translateY(-5px) !important ;
-  opacity: 0.4 !important;
+  opacity: 0.7 !important;
   transition: all ease-out 0.5s !important;
 }
 
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 30px;
+}

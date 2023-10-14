@@ -58,14 +58,7 @@ const HomeSectionThree = () => {
             I’ve created these premium fitness classes for everyone starting
             from beginner to advanced level with an in depth FAQ.
           </p>
-          <button
-            className=" pl-[13px] text-[14px] leading-[1.6em] tracking-[2px] font-[500] py-[20px] px-[20px] min-w-[200px] rounded-[6px] text-[#081158] w-fit bg-white bg-no-repeat bg-[20px]  bg-[auto,15px] 
-             hover:pl-[20px] duration-500 hover:bg-[30px] hover:-translate-y-1 uppercase"
-            style={{
-              backgroundImage:
-                "url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808e10957e0a07c82e4bcd_Vector%204%20(1).svg')",
-            }}
-          >
+          <button className="section-btn bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808e10957e0a07c82e4bcd_Vector%204%20(1).svg')]">
             View all
           </button>
         </motion.div>
