@@ -96,8 +96,8 @@ const HomeSectionEight = () => {
             className="mb-[100px] w-[150vw] flex scroller   items-center scroller"
             style={{ x: xt }}
           >
-            {topImage.map((image) => (
-              <span className=" relative h-[150px] w-[150px]  rounded-[10px] overflow-hidden md:w-[200px] md:h-[200px] lg:w-[400px] lg:h-[400px] mr:[50px]  md:mr-[100px] ">
+            {topImage.map((image, index) => (
+              <span className=" relative h-[150px] w-[150px]  rounded-[10px] overflow-hidden md:w-[200px] md:h-[200px] lg:w-[400px] lg:h-[400px] mr:[50px]  md:mr-[100px] " key={index}>
                 <Image
                   src={image}
                   width={500}
@@ -113,12 +113,10 @@ const HomeSectionEight = () => {
         <div className=" h-fit ">
           <motion.div
             className=" w-[150vw]  flex"
-            // style={{ x: bottomx }}
             style={{ x: xb }}
-            //   style={{ x: scrollYProgress }}
           >
-            {bottomImage.map((image) => (
-              <span className=" relative h-[150px] w-[150px] mr-[50px] md:mr-[100px]  rounded-[10px] overflow-hidden md:w-[200px] md:h-[200px] lg:w-[400px] lg:h-[400px]">
+            {bottomImage.map((image, index) => (
+              <span className=" relative h-[150px] w-[150px] mr-[50px] md:mr-[100px]  rounded-[10px] overflow-hidden md:w-[200px] md:h-[200px] lg:w-[400px] lg:h-[400px]" key={index}>
                 <Image
                   src={image}
                   width={500}

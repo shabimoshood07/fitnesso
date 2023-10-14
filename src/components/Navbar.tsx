@@ -4,14 +4,19 @@ import Link from "next/link";
 import { useState } from "react";
 import { useGlobalContext } from "@/lib/context";
 import Cart from "./Cart";
-
+import { useScroll, motion } from "framer-motion";
 const Navbar = () => {
+  const { scrollYProgress } = useScroll();
+
   const [show, setShow] = useState(false);
   const toggleNavClass = "!w-0 !px-0 overflow-hidden";
   const toggleNavFunt = () => setShow(!show);
   const { setShowCart, showCart } = useGlobalContext();
   return (
-    <header className="h-[80px] fixed flex items-center top-0 w-screen z-10">
+    <motion.header
+      className="h-[80px] fixed flex items-center top-0 w-screen z-10 bg-white"
+      // style={{ opacity: scrollYProgress }}
+    >
       <nav className="flex justify-between items-center w-[95%] max-w-[1450px] mx-auto relative">
         {/* Logo */}
         <Link href="/">
@@ -84,7 +89,7 @@ const Navbar = () => {
         </div>
         <Cart />
       </nav>
-    </header>
+    </motion.header>
   );
 };
 

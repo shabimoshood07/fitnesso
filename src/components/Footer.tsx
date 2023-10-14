@@ -50,8 +50,8 @@ const Footer = () => {
               <h2 className="mb-[15px] text-[14px] leading-[1.6em] tracking-[1px] uppercase text-white font-[500] ">
                 Licencing
               </h2>
-              {Licencing.map((link) => (
-                <h3 className=" mb-[5px] text-[15px] capitalize leading-[1.6em] tracking-[0.5px] text-white md:text-[20px]  ">
+              {Licencing.map((link, index) => (
+                <h3 className=" mb-[5px] text-[15px] capitalize leading-[1.6em] tracking-[0.5px] text-white md:text-[20px]  " key={index}>
                   {link}
                 </h3>
               ))}
@@ -61,8 +61,8 @@ const Footer = () => {
             <h2 className="mb-[15px] text-[14px] leading-[1.6em] tracking-[1px] uppercase text-white font-[500] ">
               Explore
             </h2>
-            {exploreLinks.map((link) => (
-              <h3 className=" mb-[5px] text-[15px] capitalize leading-[1.6em] tracking-[0.5px] text-white md:text-[20px]  ">
+            {exploreLinks.map((link, index) => (
+              <h3 className=" mb-[5px] text-[15px] capitalize leading-[1.6em] tracking-[0.5px] text-white md:text-[20px] " key={index}>
                 {link}
               </h3>
             ))}
