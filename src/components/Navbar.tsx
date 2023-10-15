@@ -15,7 +15,6 @@ const Navbar = () => {
   return (
     <motion.header
       className="h-[80px] fixed flex items-center top-0 w-screen z-10 bg-white"
-      // style={{ opacity: scrollYProgress }}
     >
       <nav className="flex justify-between items-center w-[95%] max-w-[1450px] mx-auto relative">
         {/* Logo */}

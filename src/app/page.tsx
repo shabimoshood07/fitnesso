@@ -7,7 +7,7 @@ import HomeSectionSix from "@/components/HomeSectionSix";
 import HomeSectionThree from "@/components/HomeSectionThree";
 import HomeSectionTwo from "@/components/HomeSectionTwo";
 import HomeSectionEight from "@/components/HomeSectionEight";
-import Footer from "@/components/Footer";
+
 
 const Home = () => {
   return (
@@ -51,7 +51,6 @@ const Home = () => {
       <HomeSectionSix />
       <HomeSectionSeven />
       <HomeSectionEight />
-      <Footer />
     </div>
   );
 };

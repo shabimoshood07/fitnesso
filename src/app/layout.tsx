@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Red_Hat_Display, Permanent_Marker, } from "next/font/google";
+import { Red_Hat_Display, Permanent_Marker } from "next/font/google";
 import { AppProvider } from "@/lib/context";
 import Cart from "@/components/Cart";
+import Footer from "@/components/Footer";
 
 const redHatDispaly = Red_Hat_Display({
   weight: ["500", "300", "400"],
@@ -32,9 +33,9 @@ export default function RootLayout({
         <AppProvider>
           <Navbar />
           {children}
+          <Footer />
         </AppProvider>
       </body>
     </html>
   );
 }
-
