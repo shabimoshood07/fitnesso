@@ -35,7 +35,7 @@ const Navbar = () => {
             } `}
           >
             <li className="nav-links">
-              <Link href="#">About</Link>
+              <Link href="/about">About</Link>
             </li>
             <li className="nav-links min-w-max">
               <Link href="#">Free Workouts</Link>

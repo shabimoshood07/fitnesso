@@ -87,7 +87,7 @@ const HomeSectionEight = () => {
 
   return (
     <section
-      className=" py-[75px] md:py-[100px] lg:py-[150px]  bg-[#eef0f4] relative"
+      className=" py-[75px] md:py-[100px] lg:py-[150px]  bg-[#eef0f4] relative overflow-hidden"
       ref={container}
     >
       <div className="">

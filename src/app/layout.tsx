@@ -5,6 +5,7 @@ import { Red_Hat_Display, Permanent_Marker } from "next/font/google";
 import { AppProvider } from "@/lib/context";
 import Cart from "@/components/Cart";
 import Footer from "@/components/Footer";
+import HomeSectionEight from "@/components/HomeSectionEight";
 
 const redHatDispaly = Red_Hat_Display({
   weight: ["500", "300", "400"],
@@ -33,6 +34,7 @@ export default function RootLayout({
         <AppProvider>
           <Navbar />
           {children}
+          <HomeSectionEight />
           <Footer />
         </AppProvider>
       </body>
