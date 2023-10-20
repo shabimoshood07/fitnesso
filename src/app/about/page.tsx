@@ -1,13 +1,8 @@
 "use client";
 import Image from "next/image";
-import {
-  motion,
-  motionValue,
-  useInView,
-  useMotionValueEvent,
-  useScroll,
-} from "framer-motion";
+import { motion, useInView, useScroll } from "framer-motion";
 import { useRef } from "react";
+import FreeMealForm from "@/components/FreeMealForm";
 const aronList = [
   {
     number: "01",
@@ -25,11 +20,17 @@ const aronList = [
 
 const About = () => {
   const conatiner = useRef(null);
+  const bottomConatiner = useRef(null);
 
   const isInView = useInView(conatiner, { once: false });
+  const bottomConIsInView = useInView(bottomConatiner, { once: false });
 
   const { scrollYProgress, scrollY } = useScroll({
     target: conatiner,
+    offset: ["start end", "end end"],
+  });
+  const { scrollYProgress: bottomscrollYProgress } = useScroll({
+    target: bottomConatiner,
     offset: ["start end", "end end"],
   });
 
@@ -98,7 +99,12 @@ const About = () => {
 
       <section className="py-[100px] md:pt-[200px] md:pb-[50px] lg:pt-[150px] relative ">
         <div className="w-[95%] mx-auto max-w-[1450px] grid md:grid-cols-2 gap-x-[50px]  gap-y-[50px] md:gap-x-[100px]  md:gap-y-[50px]">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             <h1 className="mb-[30px] max-w-[600px] font-[500] text-[30px] leading-[1.1em] md:text-[40px] lg:text-[64px]  ">
               I am Aaron
             </h1>
@@ -122,7 +128,7 @@ const About = () => {
             <button className="section-btn !bg-[#081158] !text-white !pl-[40px] hover:!pl-[50px] hover:!-translate-y-1 bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')]">
               Schedule a call
             </button>
-          </div>
+          </motion.div>
 
           <div ref={conatiner}>
             <div className="absolute -z-10 bottom-0 right-0 w-[95vw] md:w-[50vw] md:h-[70%] md:top-[50px] lg:top-[50px] h-[40%] bg-[#081158] bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e832c916203834f1ed18f1c_Group%20117.svg')] bg-[bottom_right] bg-no-repeat" />
@@ -149,7 +155,12 @@ const About = () => {
 
       <section className="pt-[100px] pb-[75px] md:pt-[200px] md:pb-[100px] lg:py-[150px] relative ">
         <div className="w-[95%] mx-auto max-w-[1450px] grid md:grid md:grid-cols-2  flex-row-reverse gap-x-[50px]  gap-y-[50px] md:gap-x-[100px]  md:gap-y-[50px]">
-          <div className="">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             <h1 className="mb-[30px] max-w-[600px] font-[500] text-[30px] leading-[1.1em] md:text-[40px] lg:text-[64px]  ">
               I am Aaron
             </h1>
@@ -173,13 +184,17 @@ const About = () => {
             <button className="section-btn !bg-[#081158] !text-white !pl-[40px] hover:!pl-[50px] hover:!-translate-y-1 bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')]">
               Explore our shop
             </button>
-          </div>
-          <div className=" w-full md:w-[80%] mx-auto md:h-[500px] ">
+          </motion.div>
+          <div
+            className=" w-full md:w-[80%] mx-auto h-[400px] md:h-[500px] "
+            ref={bottomConatiner}
+          >
             <motion.div
               className="relative bg-cover overflow-hidden w-full   justify-self-center h-full  rounded-lg mx-auto"
               style={{
-                // transform: isInView ? "none" : "translateY(100px)",
-                // opacity: isInView ? scrollYProgress : 0,
+                transform: bottomConIsInView ? "none" : "translateY(100px)",
+                // opacity: bottomscrollYProgress,
+                opacity: bottomConIsInView ? bottomscrollYProgress : 0,
                 transition:
                   "transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
               }}
@@ -197,37 +212,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-[75px] md:py-[100px] bg-no-repeat bg-center bg-cover bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e8318706203833a1bd11fad_logan-weaver-pD5kSwtNgMc-unsplash.jpg')]">
-        <div className=" p-[30px] md:py-[100px] md:px-[50px] lg:px[100px] bg-[#cfddee] w-[95%] max-w-[1450px] mx-auto rounded-[10px] ">
-          <h1 className=" mb-[30px] font-[500] text-center text-[30px] md:text-[40px] lg:text-[64px] leading-[1.1em]  ">
-            Get our free meal plan
-          </h1>
-          <p className=" mb-[30px] font-[400] text-[20px] leading-[1.8em] text-center max-w-[800px] mx-auto">
-            Signup to our newsletter to get a free 30 day meal plan. You will
-            receive all guidance on what to eat, how to cook and how much to
-            eat.
-          </p>
-
-          <form
-            action=""
-            className="grid gap-x-[16px] gap-y-[16px]  md:grid-cols-2 lg:grid-cols-3"
-          >
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px]"
-            />
-            <input
-              type="text"
-              placeholder="Email"
-              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] "
-            />
-            <button className="section-btn !w-full md:col-span-2 lg:col-span-1 !bg-[#081158] !text-white bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')] ">
-              Signup
-            </button>
-          </form>
-        </div>
-      </section>
+      <FreeMealForm />
     </div>
   );
 };

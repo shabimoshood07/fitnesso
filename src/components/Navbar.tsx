@@ -33,15 +33,16 @@ const Navbar = () => {
             className={`right-0 items-center flex-col flex fixed -z-10 top-0 h-screen  min-[480px]:w-1/2   px-[50px] pt-[100px] pb-[50px] bg-[#cfddee] duration-500 ease-in-out lg:relative lg:overflow-visible lg:h-fit lg:flex-row lg:p-0 lg:!w-max lg:bg-transparent lg:left-auto lg:right-auto  lg:flex-1 lg:z-0 ${
               !show ? toggleNavClass : "w-screen"
             } `}
+            onClick={toggleNavFunt}
           >
             <li className="nav-links">
               <Link href="/about">About</Link>
             </li>
             <li className="nav-links min-w-max">
-              <Link href="#">Free Workouts</Link>
+              <Link href="/free-workout">Free Workouts</Link>
             </li>
             <li className="nav-links">
-              <Link href="#">Shop</Link>
+              <Link href="/shop">Shop</Link>
             </li>
 
             <button className="btn">book a call</button>

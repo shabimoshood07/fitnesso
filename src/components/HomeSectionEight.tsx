@@ -35,18 +35,12 @@ const HomeSectionEight = () => {
   const baseContainer = useRef(null);
   const baseX = useMotionValue(0);
   const baseXtop = useMotionValue(0);
-  //   const { scrollY, scrollYProgress } = useScroll();
 
   const { scrollY, scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "end end"],
+    // offset: ["start end", "end end"],
+    offset: ["start center", "end end"],
   });
-
-  //   const { scrollYProgress: baseScrollYProgress, scrollY: baseScrollY } =
-  //     useScroll({
-  //       target: baseContainer,
-  //       offset: ["start end", "end end"],
-  //     });
 
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
@@ -58,20 +52,13 @@ const HomeSectionEight = () => {
   });
 
   const baseVelocity = 10;
-  //   let bottomx;
-
-  //   useMotionValueEvent(scrollY, "change", (latest) => {
-  //     bottomx = useTransform(baseX, (v) => `${wrap(20, -45, v)}%`);
-  //   });
-
-  //   const bottomx = useTransform(baseX, (v) => `${wrap(10, 30, v)}%`);
   const bottomx = useTransform(baseX, (v) => `${wrap(-20, 25, v)}%`);
   const xt = useTransform(baseXtop, (v) => `${wrap(-30, 30, v)}%`);
   const xb = useTransform(baseX, (v) => `${wrap(-30, 30, v)}%`);
   const topx = useTransform(baseXtop, (v) => `${wrap(20, -45, v)}%`);
 
   const directionFactor = useRef<number>(1);
-  useMotionValueEvent(scrollY, "change", (latest) => {
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
     let moveBy = directionFactor.current * baseVelocity * (20 / 1000);
     if (velocityFactor.get() < 0) {
       directionFactor.current = -1;
@@ -90,99 +77,104 @@ const HomeSectionEight = () => {
       className=" py-[75px] md:py-[100px] lg:py-[150px]  bg-[#eef0f4] relative overflow-hidden"
       ref={container}
     >
-      <div className="">
-        <div className=" h-fit parallax">
-          <motion.div
-            className="mb-[100px] w-[150vw] flex scroller   items-center scroller"
-            style={{ x: xt }}
-          >
-            {topImage.map((image, index) => (
-              <span className=" relative h-[150px] w-[150px]  rounded-[10px] overflow-hidden md:w-[200px] md:h-[200px] lg:w-[400px] lg:h-[400px] mr:[50px]  md:mr-[100px] " key={index}>
-                <Image
-                  src={image}
-                  width={500}
-                  height={500}
-                  alt="scroll"
-                  className="absolute top-0 left-0 w-full h-full object-cover"
-                />
-              </span>
-            ))}
-          </motion.div>
+      <div className="w-[95%] mx-auto max-w-[1450px] overflow-hidden">
+        <div className="">
+          <div className=" h-fit parallax">
+            <motion.div
+              className="mb-[100px] w-[150vw] flex scroller   items-center scroller"
+              style={{ x: xt }}
+            >
+              {topImage.map((image, index) => (
+                <span
+                  className=" relative h-[150px] w-[150px]  rounded-[10px] overflow-hidden md:w-[200px] md:h-[200px] lg:w-[400px] lg:h-[400px] mr:[50px]  md:mr-[100px] "
+                  key={index}
+                >
+                  <Image
+                    src={image}
+                    width={500}
+                    height={500}
+                    alt="scroll"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                  />
+                </span>
+              ))}
+            </motion.div>
+          </div>
+
+          <div className=" h-fit ">
+            <motion.div className=" w-[150vw]  flex" style={{ x: xb }}>
+              {bottomImage.map((image, index) => (
+                <span
+                  className=" relative h-[150px] w-[150px] mr-[50px] md:mr-[100px]  rounded-[10px] overflow-hidden md:w-[200px] md:h-[200px] lg:w-[400px] lg:h-[400px]"
+                  key={index}
+                >
+                  <Image
+                    src={image}
+                    width={500}
+                    height={500}
+                    alt="scroll"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                  />
+                </span>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
-        <div className=" h-fit ">
-          <motion.div
-            className=" w-[150vw]  flex"
-            style={{ x: xb }}
+        <div className="absolute top-0 bottom-0 h-[150px] lg:h-[200px] right-0 left-[0%] mx-auto w-[105vw] bg-[#ec8675]  z-[2] my-auto rotate-2 flex justify-center items-center flex-wrap">
+          <Link
+            href="#"
+            className="font-[500] my-[9px] px-[10px] w-[50%] md:w-fit md:mx-[20px] flex-grow-0 flex-shrink-0 flex items-center justify-end text-[20px] lg:text-[30px] text-white tracking-[.5px] leading-[1.6em] "
           >
-            {bottomImage.map((image, index) => (
-              <span className=" relative h-[150px] w-[150px] mr-[50px] md:mr-[100px]  rounded-[10px] overflow-hidden md:w-[200px] md:h-[200px] lg:w-[400px] lg:h-[400px]" key={index}>
-                <Image
-                  src={image}
-                  width={500}
-                  height={500}
-                  alt="scroll"
-                  className="absolute top-0 left-0 w-full h-full object-cover"
-                />
-              </span>
-            ))}
-          </motion.div>
+            <Image
+              src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e82ffa5871a996615e6cebc_003-twitter-logo-button.svg"
+              width={40}
+              height={40}
+              alt="twitter"
+              className="mr-[10px] md:mr-[15px]"
+            />{" "}
+            <span>@fitnesso</span>
+          </Link>
+          <Link
+            href="#"
+            className="font-[500] my-[9px] px-[10px] w-[50%] md:w-fit md:mx-[20px] flex-grow-0 flex-shrink-0 flex items-center justify-start text-[20px] lg:text-[30px] text-white tracking-[.5px] leading-[1.6em] "
+          >
+            <Image
+              src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e83002e40b6b8486e320705_instagram.svg"
+              width={40}
+              height={40}
+              alt="twitter"
+              className="mr-[10px] md:mr-[15px]"
+            />{" "}
+            <span>@fitnesso</span>
+          </Link>
+          <Link
+            href="#"
+            className="font-[500] my-[9px] px-[10px] w-[50%] md:w-fit md:mx-[20px] flex-grow-0 flex-shrink-0 flex items-center justify-end text-[20px] lg:text-[30px] text-white tracking-[.5px] leading-[1.6em] "
+          >
+            <Image
+              src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e82ffa4097a9061280e5e5a_004-linkedin-logo-button.svg"
+              width={40}
+              height={40}
+              alt="linkedin"
+              className="mr-[10px] md:mr-[15px]"
+            />{" "}
+            <span>Fitnesso</span>
+          </Link>
+          <Link
+            href="#"
+            className="font-[500] my-[9px] px-[10px] w-[50%] md:w-fit md:mx-[20px] flex-grow-0 flex-shrink-0 flex items-center justify-start text-[20px] lg:text-[30px] text-white tracking-[.5px] leading-[1.6em] "
+          >
+            <Image
+              src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e830050cf9bc2c348479b60_youtube.svg"
+              width={40}
+              height={40}
+              alt="youtube"
+              className="mr-[10px] md:mr-[15px]"
+            />{" "}
+            <span>/Fitnesso</span>
+          </Link>
         </div>
-      </div>
-
-      <div className="absolute top-0 bottom-0 h-[150px] lg:h-[200px] right-0 left-[0%] mx-auto w-[105vw] bg-[#ec8675]  z-[2] my-auto rotate-2 flex justify-center items-center flex-wrap">
-        <Link
-          href="#"
-          className="font-[500] my-[9px] px-[10px] w-[50%] md:w-fit md:mx-[20px] flex-grow-0 flex-shrink-0 flex items-center justify-end text-[20px] lg:text-[30px] text-white tracking-[.5px] leading-[1.6em] "
-        >
-          <Image
-            src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e82ffa5871a996615e6cebc_003-twitter-logo-button.svg"
-            width={40}
-            height={40}
-            alt="twitter"
-            className="mr-[10px] md:mr-[15px]"
-          />{" "}
-          <span>@fitnesso</span>
-        </Link>
-        <Link
-          href="#"
-          className="font-[500] my-[9px] px-[10px] w-[50%] md:w-fit md:mx-[20px] flex-grow-0 flex-shrink-0 flex items-center justify-start text-[20px] lg:text-[30px] text-white tracking-[.5px] leading-[1.6em] "
-        >
-          <Image
-            src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e83002e40b6b8486e320705_instagram.svg"
-            width={40}
-            height={40}
-            alt="twitter"
-            className="mr-[10px] md:mr-[15px]"
-          />{" "}
-          <span>@fitnesso</span>
-        </Link>
-        <Link
-          href="#"
-          className="font-[500] my-[9px] px-[10px] w-[50%] md:w-fit md:mx-[20px] flex-grow-0 flex-shrink-0 flex items-center justify-end text-[20px] lg:text-[30px] text-white tracking-[.5px] leading-[1.6em] "
-        >
-          <Image
-            src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e82ffa4097a9061280e5e5a_004-linkedin-logo-button.svg"
-            width={40}
-            height={40}
-            alt="linkedin"
-            className="mr-[10px] md:mr-[15px]"
-          />{" "}
-          <span>Fitnesso</span>
-        </Link>
-        <Link
-          href="#"
-          className="font-[500] my-[9px] px-[10px] w-[50%] md:w-fit md:mx-[20px] flex-grow-0 flex-shrink-0 flex items-center justify-start text-[20px] lg:text-[30px] text-white tracking-[.5px] leading-[1.6em] "
-        >
-          <Image
-            src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e830050cf9bc2c348479b60_youtube.svg"
-            width={40}
-            height={40}
-            alt="youtube"
-            className="mr-[10px] md:mr-[15px]"
-          />{" "}
-          <span>/Fitnesso</span>
-        </Link>
       </div>
     </section>
   );

@@ -7,7 +7,8 @@ import HomeSectionSix from "@/components/HomeSectionSix";
 import HomeSectionThree from "@/components/HomeSectionThree";
 import HomeSectionTwo from "@/components/HomeSectionTwo";
 import HomeSectionEight from "@/components/HomeSectionEight";
-
+import HomeWorkout from "@/components/HomeWorkout";
+import FreeMealForm from "@/components/FreeMealForm";
 
 const Home = () => {
   return (
@@ -48,7 +49,8 @@ const Home = () => {
       <HomeSectionThree />
       <HomeSectionFour />
       <HomeSectionFive />
-      <HomeSectionSix />
+      {/* <HomeSectionSix /> */}
+      <FreeMealForm />
       <HomeSectionSeven />
       {/* <HomeSectionEight /> */}
     </div>
