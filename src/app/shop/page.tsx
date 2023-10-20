@@ -29,6 +29,34 @@ const data = [
     desc: "High Intensity Training ",
   },
 ];
+import { useRouter, usePathname } from "next/navigation";
+
+export const SectionNav = ({ category }: { category: string }) => {
+  return (
+    <div className="mt-[100px] pb-[15px] border-b-2 md:flex justify-between items-center">
+      <h1 className="text-[14px] leading-[1.6em] font-[500] uppercase mb-[14px] md:mb-0">
+        Categories
+      </h1>
+      <div className="flex items-center gap-4">
+        <Link href="/shop">
+          <button className={`hover:-translate-y-1 duration-200 py-[12px] px-[15px] md:px-[20px] font-[500] text-[14px] leading-[1.6em] uppercase tracking-[2px] ${category === 'all' ? 'bg-[#8ea5a0] text-white':""} rounded-[6px] `}>
+            All
+          </button>
+        </Link>
+        <Link href="/category/nutrition">
+          <button className={`hover:-translate-y-1 duration-200 py-[12px] px-[15px] md:px-[20px] font-[500] text-[14px] leading-[1.6em] uppercase tracking-[2px]  rounded-[6px] ${category === 'nutrition' ? 'bg-[#8ea5a0] text-white':""}`}>
+            Nutrition
+          </button>
+        </Link>
+        <Link href="/category/training">
+          <button className={`hover:-translate-y-1 duration-200 py-[12px] px-[15px] md:px-[20px] font-[500] text-[14px] leading-[1.6em] uppercase tracking-[2px]  rounded-[6px] ${category === 'training' ? 'bg-[#8ea5a0] text-white':""} `}>
+            Training
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 const Shop = () => {
   const variants = {
@@ -64,28 +92,7 @@ const Shop = () => {
           <div className="flex justify-center items-center absolute m-auto top-0 bottom-0 left-0 right-0 bg-[#081158] h-[125px] md:h-[150px] lg:h-[200px] w-[150vw] -ml-[29%]   rotate-2 "></div>
         </div>
         <div className="w-[95%] mx-auto max-w-[1450px] ">
-          <div className="mt-[100px] pb-[15px] border-b-2 md:flex justify-between items-center">
-            <h1 className="text-[14px] leading-[1.6em] font-[500] uppercase mb-[14px] md:mb-0">
-              Categories
-            </h1>
-            <div className="flex items-center gap-4">
-              <Link href="/shop">
-                <button className="py-[12px] px-[15px] md:px-[20px] font-[500] text-[14px] leading-[1.6em] uppercase tracking-[2px] bg-[#8ea5a0] rounded-[6px] text-white  ">
-                  All
-                </button>
-              </Link>
-              <Link href="/category/nutrition">
-                <button className="py-[12px] px-[15px] md:px-[20px] font-[500] text-[14px] leading-[1.6em] uppercase tracking-[2px]  rounded-[6px]   ">
-                  Nutrition
-                </button>
-              </Link>
-              <Link href="/category/training">
-                <button className="py-[12px] px-[15px] md:px-[20px] font-[500] text-[14px] leading-[1.6em] uppercase tracking-[2px]  rounded-[6px]   ">
-                  Training
-                </button>
-              </Link>
-            </div>
-          </div>
+          <SectionNav category="all" />
           <div className="mt-[50px] md:mt-[100px] grid grid-cols-1 gap-x-[25px] gap-y-[25px] md:gap-y-[50px] md:gap-x-[50px] md:grid-cols-3 items-stretch justify-stretch">
             {data.map((dat, index) => {
               return (

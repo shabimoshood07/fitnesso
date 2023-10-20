@@ -13,9 +13,7 @@ const Navbar = () => {
   const toggleNavFunt = () => setShow(!show);
   const { setShowCart, showCart } = useGlobalContext();
   return (
-    <motion.header
-      className="h-[80px] fixed flex items-center top-0 w-screen z-10 bg-white"
-    >
+    <motion.header className="h-[80px] fixed flex items-center top-0 w-screen z-10 bg-white">
       <nav className="flex justify-between items-center w-[95%] max-w-[1450px] mx-auto relative">
         {/* Logo */}
         <Link href="/">
@@ -44,8 +42,9 @@ const Navbar = () => {
             <li className="nav-links">
               <Link href="/shop">Shop</Link>
             </li>
-
-            <button className="btn">book a call</button>
+            <Link href="/contact">
+              <button className="btn">book a call</button>
+            </Link>
           </ul>
           <div className="flex justify-between items-center">
             <button
