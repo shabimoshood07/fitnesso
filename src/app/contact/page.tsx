@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <section className=" py-[75px] md:py-[100px] lg:py-[150px] bg-[#f5f5f5] overflow-hidden">
+    <section className=" py-[75px] md:py-[100px] lg:py-[150px] bg-[#f5f5f5] overflow-hidden bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e832c916203834f1ed18f1c_Group%20117.svg')] bg-no-repeat bg-[bottom_right] ">
       <div className=" w-[95%] max-w-[1450px] mx-auto md:grid grid-cols-2 gap-x-[25px] gap-y-[25px] ">
         <div>
           <h2 className="  mb-[30px] text-[14px] leading-[1.6em] tracking-[1px]  uppercase font-[500]  ">
@@ -34,26 +34,26 @@ const Contact = () => {
           </h3>
         </div>
         <form action="" className="p-[30px] bg-[#cfddee]">
-          <div className="grid gap-y-[25px]  grid-cols-1 items-center justify-center">
+          <div className="grid gap-y-[25px] gap-x-[25px] w-full ">
             <input
               type="text"
               placeholder="Full Name"
-              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2"
+              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2 lg:col-span-1"
             />
             <input
               type="text"
               placeholder="Current weight"
-              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2"
+              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2 lg:col-span-1"
             />
             <input
               type="text"
               placeholder="Goal weight"
-              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2"
+              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2  lg:col-span-1"
             />
             <input
               type="text"
               placeholder="Email"
-              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2"
+              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2 lg:col-span-1 "
             />
             <textarea
               name="description"
@@ -61,9 +61,9 @@ const Contact = () => {
               cols={30}
               rows={10}
               placeholder="Describe your goal"
-              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2"
+              className="py-[8px] px-[15px] h-[60px] text-[16px] leading-[1.6em] bg-[rgba(32,52,146,0.1)] text-[#081158] placeholder:text-[#081158] rounded-[10px] w-full col-span-2 min-h-[300px]"
             ></textarea>
-            <button className="section-btn !w-full md:col-span-2 lg:col-span-1 !bg-[#081158] !text-white bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')] ">
+            <button className="section-btn !w-full md:col-span-2 !bg-[#081158] !text-white bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')] ">
               Get in touch
             </button>
           </div>

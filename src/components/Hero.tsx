@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const heroData = [
@@ -14,6 +15,7 @@ const heroData = [
     image:
       "https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80a6e90c4ef4bcb4fd3071_Rectangle%20439.png",
     data: "online",
+    link: "/about",
   },
   {
     heading: "GET MOVING",
@@ -25,6 +27,7 @@ const heroData = [
     image:
       "https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e8318f6e893cd930956b324_logan-weaver-RBbwGEKBbD8-unsplash.jpg",
     data: "premium",
+    link: "/shop",
   },
   {
     heading: "FREE CLASSES",
@@ -36,12 +39,12 @@ const heroData = [
     image:
       "https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e8318706203833a1bd11fad_logan-weaver-pD5kSwtNgMc-unsplash.jpg",
     data: "free",
+    link: "/free-workout",
   },
 ];
 
 const HeroCard = ({
   details,
-  currentIndex,
 }: {
   details: {
     heading: string;
@@ -51,6 +54,7 @@ const HeroCard = ({
     btnText: string;
     image: string;
     data: string;
+    link: string;
     forward: () => void;
     backward: () => void;
   };
@@ -145,7 +149,9 @@ const HeroCard = ({
         <p className="mb-[30px] max-w-[500px] text-[18px] lg:text-[20px] text-justify leading-[1.8em] font-[400]">
           {details.paragraph}
         </p>
-        <button className="btn !w-fit !py-[20px]">{details.btnText}</button>
+        <Link href={details.link}>
+          <button className="btn !w-fit !py-[20px]">{details.btnText}</button>
+        </Link>
       </motion.div>
     </motion.div>
   );

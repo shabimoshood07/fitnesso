@@ -1,5 +1,6 @@
 "use client";
 import { motion, useScroll } from "framer-motion";
+import Link from "next/link";
 import { useRef } from "react";
 const data = [
   {
@@ -61,16 +62,14 @@ const HomeSectionTwo = () => {
             With free online classes people who don’t have the time or money to
             afford a personal coach can make change their lives forever.
           </p>
-          <button
-            className=" pl-[13px] text-[14px] leading-[1.6em] tracking-[2px] font-[500] py-[20px] px-[20px] min-w-[200px] rounded-[6px] bg-[#081158] w-fit text-white bg-no-repeat bg-[20px]  bg-[auto,15px] 
-             hover:pl-[20px] duration-500 hover:bg-[30px] hover:-translate-y-1 uppercase"
-            style={{
-              backgroundImage:
-                "url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')",
-            }}
-          >
-            View all
-          </button>
+          <Link href={"/free-workout"}>
+            <button
+              className=" pl-[13px] text-[14px] leading-[1.6em] tracking-[2px] font-[500] py-[20px] px-[20px] min-w-[200px] rounded-[6px] bg-[#081158] w-fit text-white bg-no-repeat bg-[20px]  bg-[auto,15px] 
+            hover:pl-[20px] duration-500 hover:bg-[30px] hover:-translate-y-1 uppercase bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')]"
+            >
+              View all
+            </button>
+          </Link>
         </motion.div>
 
         <motion.div className="mt-[50px] md:mt-[100px] grid grid-cols-1 gap-x-[25px] gap-y-[25px] md:gap-y-[50px] md:gap-x-[50px] md:grid-cols-3 items-stretch justify-stretch">

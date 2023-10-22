@@ -1,5 +1,6 @@
 "use client";
 import { motion, useScroll } from "framer-motion";
+import Link from "next/link";
 
 import { useRef } from "react";
 const data = [
@@ -63,9 +64,11 @@ const HomeSectionOne = () => {
           <motion.h1 className="mb-[30px] max-w-[800px] mx-auto text-center text-[30px] md:text-[40px] lg:text-[64px] leading-[1.1em] font-[500]  ">
             The journey to a healthier body starts right now
           </motion.h1>
-          <button className="btn  !min-w-[200px] !py-[20px] !w-fit">
-            online coaching
-          </button>
+          <Link href={'/about'}>
+            <button className="btn  !min-w-[200px] !py-[20px] !w-fit">
+              online coaching
+            </button>
+          </Link>
         </motion.div>
 
         <motion.div

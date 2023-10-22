@@ -45,7 +45,7 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              HI I'M SANDRA LYONS
+              HI I&apos;M SANDRA LYONS
             </motion.h3>
 
             <h1 className="mb-[30px] text-[36px] leading-[1.1em] font-[500] md:text-[55px] lg:text-[72px]  ">
@@ -115,7 +115,7 @@ const About = () => {
 
             <ul className="mb-[30px] pl-[25px] pt-[15px]  ">
               {aronList.map((list, index) => (
-                <li className="flex justify-start items-center mb-[15px]">
+                <li className="flex justify-start items-center mb-[15px]" key={index}>
                   <span className="mr-[15px] w-[35px] text-[16px] leading-[1.1em] tracking-[1px] text-[#83a5a0] md:text-[20px] lg:text-[25px] font-[400] font-parMark ">
                     {list.number}
                   </span>
@@ -171,7 +171,7 @@ const About = () => {
 
             <ul className="mb-[30px] pl-[25px] pt-[15px]  ">
               {aronList.map((list, index) => (
-                <li className="flex justify-start items-center mb-[15px]">
+                <li className="flex justify-start items-center mb-[15px]" key={index}>
                   <span className="mr-[15px] w-[35px] text-[16px] leading-[1.1em] tracking-[1px] text-[#83a5a0] md:text-[20px] lg:text-[25px] font-[400] font-parMark ">
                     {list.number}
                   </span>

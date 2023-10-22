@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const data = [
   {
@@ -58,9 +59,11 @@ const HomeSectionThree = () => {
             I’ve created these premium fitness classes for everyone starting
             from beginner to advanced level with an in depth FAQ.
           </p>
+          <Link href={"/shop"}>
           <button className="section-btn bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808e10957e0a07c82e4bcd_Vector%204%20(1).svg')]">
             View all
           </button>
+          </Link>
         </motion.div>
 
         <motion.div className="mt-[50px] md:mt-[100px] grid grid-cols-1 gap-x-[25px] gap-y-[25px] md:gap-y-[50px] md:gap-x-[50px] md:grid-cols-3 items-stretch justify-stretch">
@@ -100,11 +103,11 @@ const HomeSectionThree = () => {
                     {dat.desc}
                   </h3>
                   <button
-                    className=" pl-[13px] text-[14px] bg-transparent w-fit !text-[#081158] bg-no-repeat bg-left  bg-[auto,15px]  hover:pl-[20px] duration-500 hover:bg-[10px] "
-                    style={{
-                      backgroundImage:
-                        "url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808e10957e0a07c82e4bcd_Vector%204%20(1).svg')",
-                    }}
+                    className=" pl-[13px] text-[14px] bg-transparent w-fit !text-[#081158] bg-no-repeat bg-left  bg-[auto,15px]  hover:pl-[20px] duration-500 hover:bg-[10px] bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808e10957e0a07c82e4bcd_Vector%204%20(1).svg')]"
+                    // style={{
+                    //   backgroundImage:
+                    //     "url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808e10957e0a07c82e4bcd_Vector%204%20(1).svg')",
+                    // }}
                   >
                     View
                   </button>

@@ -2,8 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import FreeMealForm from "@/components/FreeMealForm";
-import Link from "next/link";
-import { SectionNav } from "@/app/shop/page";
+import SectionNav from "@/components/SectionNav";
 const data = [
   {
     image:
