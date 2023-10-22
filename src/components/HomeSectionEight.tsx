@@ -8,7 +8,6 @@ import {
   useTransform,
   useMotionValue,
   useVelocity,
-  useAnimationFrame,
   useMotionValueEvent,
 } from "framer-motion";
 import { wrap } from "framer-motion";
@@ -32,13 +31,11 @@ const bottomImage = [
 const HomeSectionEight = () => {
   useEffect(() => {}, []);
   const container = useRef(null);
-  const baseContainer = useRef(null);
   const baseX = useMotionValue(0);
   const baseXtop = useMotionValue(0);
 
   const { scrollY, scrollYProgress } = useScroll({
     target: container,
-    // offset: ["start end", "end end"],
     offset: ["start center", "end end"],
   });
 

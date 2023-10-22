@@ -4,16 +4,25 @@ import Link from "next/link";
 import { useState } from "react";
 import { useGlobalContext } from "@/lib/context";
 import Cart from "./Cart";
-import { useScroll, motion } from "framer-motion";
+import { useScroll, motion, useMotionValueEvent } from "framer-motion";
 const Navbar = () => {
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
+
+  const [scrollDistance, setScrollDistance] = useState<number>(0);
 
   const [show, setShow] = useState(false);
   const toggleNavClass = "!w-0 !px-0 overflow-hidden";
   const toggleNavFunt = () => setShow(!show);
   const { setShowCart, showCart } = useGlobalContext();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrollDistance(latest);
+  });
   return (
-    <motion.header className="h-[80px] fixed flex items-center top-0 w-screen z-10 bg-white">
+    <motion.header
+      className={`h-[80px] fixed flex items-center top-0 w-screen z-10 ${
+        scrollDistance >= 200 ? "bg-white" : ""
+      } `}
+    >
       <nav className="flex justify-between items-center w-[95%] max-w-[1450px] mx-auto relative">
         {/* Logo */}
         <Link href="/">
