@@ -193,7 +193,6 @@ const About = () => {
               className="relative bg-cover overflow-hidden w-full   justify-self-center h-full  rounded-lg mx-auto"
               style={{
                 transform: bottomConIsInView ? "none" : "translateY(100px)",
-                // opacity: bottomscrollYProgress,
                 opacity: bottomConIsInView ? bottomscrollYProgress : 0,
                 transition:
                   "transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",

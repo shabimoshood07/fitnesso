@@ -77,8 +77,18 @@ const HomeSectionSeven = () => {
                   </h3>
 
                   <div className="bg-white   rounded-[10px]  p-[15px] ">
-                    <div className="mb-[15px] text-[14px] ">
-                      <img src="" alt="" />
+                    <div className="mb-[15px] text-[14px]  flex justify-start items-center ">
+                      <div className="relative h-8 w-8 rounded-full overflow-hidden">
+                        <Image
+                          src={
+                            "https://assets.website-files.com/5e8303dd097a90ffd20e6b2f/5e8317969a30c531f61c7a2c_1585649558084-image14.jpg"
+                          }
+                          height={500}
+                          width={500}
+                          alt="image"
+                          className="absolute h-full w-full left-0 top-0  object-cover"
+                        />
+                      </div>
                       <h4 className="text-[12px] leading-[1.4em] ">
                         CURTIS VANDERVORT
                       </h4>
