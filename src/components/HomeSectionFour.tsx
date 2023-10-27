@@ -29,7 +29,7 @@ const HomeSectionFour = () => {
       <div className=" absolute -z-10 top-0 left-0 h-[60%] w-full bg-cover bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80ac6d9d7551056aca3cbf_Lines.svg')] bg-no-repeat  bg-[50%_0px] md:bg-[0%_-100px] object-cover "></div>
 
       <motion.h1
-        className="absolute top-0 bottom-0 my-auto z-20 left-0 w-full h-fit font-[400] text-[30px] md:text-[40px] lg:text-[64px] leading-[1.1em] text-center tracking-[1px] text-[#ec8675] md:text-white font-parMark "
+        className="absolute top-0 bottom-0 my-auto z-[9] left-0 w-full h-fit font-[400] text-[30px] md:text-[40px] lg:text-[64px] leading-[1.1em] text-center tracking-[1px] text-[#ec8675] md:text-white font-parMark "
         initial={{ y: 30 }}
         whileInView={{ y: 0, transition: { duration: .6 } }}
         style={{ opacity: scrollYProgress }}
