@@ -3,7 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Red_Hat_Display, Permanent_Marker } from "next/font/google";
 import { AppProvider } from "@/lib/context";
-import Cart from "@/components/Cart";
 import Footer from "@/components/Footer";
 import HomeSectionEight from "@/components/HomeSectionEight";
 

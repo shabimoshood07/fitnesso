@@ -5,8 +5,7 @@ import FreeWorkoutPlans from "@/components/FreeWorkoutPlans";
 import Image from "next/image";
 import { freeWorkoutPlansData } from "@/lib/data";
 import { usePathname } from "next/navigation";
-
-const OutdoorWorkout = () => {
+const UltimateAbs = () => {
   const pathname = usePathname();
 
   const data = freeWorkoutPlansData.filter((dat) => dat.link !== pathname);
@@ -19,7 +18,7 @@ const OutdoorWorkout = () => {
             <div className="w-full mx-auto h-[300px] md:h-[700px] relative rounded-[10px] overflow-hidden">
               <Image
                 className="absolute top-0 left-0 w-full h-full object-cover"
-                src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80cc3543a59d1e21194573_angelos-michalopoulos-S3Rs0DcvvK0-unsplash.jpg"
+                src="https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80cc35a7eca1d6f394deb8_guillaume-bolduc-cfmBbDcCAQo-unsplash.jpg"
                 height={500}
                 width={500}
                 alt="image"
@@ -28,21 +27,25 @@ const OutdoorWorkout = () => {
 
             <div className="max-w-[600px]">
               <h3 className="mb-[30px] text-[14px] leading-[1.6em] tracking-[1px] uppercase font-[500] ">
-                30 minutes
+                40 MINUTES
               </h3>
               <h1 className="text-[35px] leading-[1.1em]  md:text-[55px] lg:text-[72px] font-[500] mb-[30px]  capitalize">
-                the perfect outdoor workout
+                The Ultimate Abs Tabata
               </h1>
               <p className="mb-[30px] text-[18px] leading-[1.8em] font-[400] md:text-[20px]  max-w-[500px] ">
-                Muscles fit dip major tuck flex extension. Walkout heart rate
-                barbell, leg press running bounce stretch kick weighted
-                pectorals crosstraining.
+                Body fat percentage weightlifting pull upper body kick abs curl
+                climp lower body. Pull jacks wall, pectorals bench exercise
+                walkout push kick ball. Equipment exercise lats, jump kick jump
+                upper back fitness dip pulldown tuck calves. Ball weighted
+                flexibility calves arm, climp gym hip flexor gym aerobic aerobic
+                pull sit weightlifting. Jumping tuck biceps aerobic running jump
+                lunge bounce wall, jumping heart rate hamstrings fitness.
               </p>
               <div className="mb-[30px] flex justify-start items-center">
                 <div className="relative h-8 w-8 rounded-full overflow-hidden">
                   <Image
                     src={
-                      "https://assets.website-files.com/5e8303dd097a90ffd20e6b2f/5e8317969a30c531f61c7a2c_1585649558084-image14.jpg"
+                      "https://assets.website-files.com/5e8303dd097a90ffd20e6b2f/5e831e2642594a3e47696a07_guillaume-bolduc-cfmBbDcCAQo-unsplash.jpg"
                     }
                     height={500}
                     width={500}
@@ -55,7 +58,7 @@ const OutdoorWorkout = () => {
                 </span>
               </div>
               <button className="section-btn  !bg-[10px] !pl-[20px] hover:!bg-[25px]  hover:!pl-[40px]  !bg-[#081158] !text-white bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')] ">
-                view all posts
+                start workout
               </button>
             </div>
           </div>
@@ -93,7 +96,7 @@ const OutdoorWorkout = () => {
             <div className="rounded-[10px] overflow-hidden w-full h-[300px] lg:h-[700px] min-[480px]:h-[450px] relative  ">
               <Image
                 src={
-                  "https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e80cc335836db3cdebdf20a_geert-pieters-3RnkZpDqsEI-unsplash.jpg"
+                  "https://assets.website-files.com/5e8303dd097a90ffd20e6b2f/5e836d178a13091c9f4edfc9_dylan-nolte-ITDjGji__6Y-unsplash.jpg"
                 }
                 height={500}
                 width={500}
@@ -166,4 +169,4 @@ const OutdoorWorkout = () => {
   );
 };
 
-export default OutdoorWorkout;
+export default UltimateAbs;
