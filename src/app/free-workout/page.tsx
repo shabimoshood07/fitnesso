@@ -1,7 +1,8 @@
 import FreeMealForm from "@/components/FreeMealForm";
+import FreeWorkoutPlans from "@/components/FreeWorkoutPlans";
 import HomeWorkout from "@/components/HomeWorkout";
 import Image from "next/image";
-
+import { freeWorkoutPlansData } from "@/lib/data";
 const FreeWorkoutPage = () => {
   return (
     <>
@@ -22,7 +23,8 @@ const FreeWorkoutPage = () => {
           <div className="flex justify-center items-center absolute m-auto top-0 bottom-0 left-0 right-0 bg-[#cfddee] h-[125px] md:h-[150px] lg:h-[200px] w-[150vw] -ml-[29%]   rotate-2 "></div>
         </div>
         <div className="w-[95%] mx-auto max-w-[1450px] relative">
-          <HomeWorkout />
+          {/* <HomeWorkout /> */}
+          <FreeWorkoutPlans data={freeWorkoutPlansData}/>
         </div>
       </section>
       <FreeMealForm />

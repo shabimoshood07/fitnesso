@@ -14,7 +14,7 @@ const UltimateAbs = () => {
     <>
       <section className="relative bg-[#d2e4e0] py-[75px] md:py-[100px] lg:py-[150px] bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e832f6a790e744037d5a35a_Green%20Lines.svg')] bg-[bottom_right] bg-no-repeat">
         <div className="w-[97%] mx-auto max-w-[1450px] ">
-          <div className="grid gap-x-[25px]  gap-y-[25px] md:grid-cols-2  items-center">
+          <div className="grid gap-x-[25px]  gap-y-[25px] md:gap-x-[50px] md:grid-cols-2  items-center">
             <div className="w-full mx-auto h-[300px] md:h-[700px] relative rounded-[10px] overflow-hidden">
               <Image
                 className="absolute top-0 left-0 w-full h-full object-cover"
@@ -53,7 +53,7 @@ const UltimateAbs = () => {
                     className="absolute h-full w-full left-0 top-0  object-cover"
                   />
                 </div>
-                <span className="text-[12px] leading-[1.4em] tracking-[1px]">
+                <span className="text-[12px] leading-[1.4em] tracking-[1px] font-[500] ml-1">
                   CURTIS VANDERVORT
                 </span>
               </div>
