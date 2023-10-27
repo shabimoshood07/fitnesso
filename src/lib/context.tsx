@@ -20,6 +20,7 @@ type Cart = {
   time: string;
   desc: string;
   type: string;
+  quantity: number;
 };
 
 const AppContext = createContext<ContextProps>({
