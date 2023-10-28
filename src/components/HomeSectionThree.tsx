@@ -43,10 +43,9 @@ const HomeSectionThree = () => {
         <motion.div className="mt-[50px] md:mt-[100px] grid grid-cols-1 gap-x-[25px] gap-y-[25px] md:gap-y-[50px] md:gap-x-[50px] md:grid-cols-3 items-stretch justify-stretch">
           {productsData.map((product) => {
             return (
-              <Link href={`/product/${product.type}`}>
+              <Link href={`/product/${product.type}`} key={product.id}>
                 <motion.div
                   className="rounded-md overflow-hidden hover cursor-pointer flex justify-stretch flex-col items-stretch duration-500"
-                  key={product.id}
                   custom={product.id}
                   initial="hidden"
                   whileInView="visible"

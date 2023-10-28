@@ -1,6 +1,7 @@
+"use client";
 import { productsData } from "@/lib/data";
 import Image from "next/image";
-
+import { useGlobalContext } from "@/lib/context";
 type Product = {
   id: number;
   image: string;
@@ -12,13 +13,38 @@ type Product = {
 };
 
 const Product = ({ params }: { params: { type: string } }) => {
+  const { cart, setCart, setShowCart, showCart } = useGlobalContext();
   const type = params.type;
   const product: Product | undefined = productsData.find(
     (product) => product.type === type
   );
+
+  const addToCart = (product: Product) => {
+    const { id, image, price, desc } = product;
+    const findProduct = cart.find((product) => product.id === id);
+
+    console.log("findProduct", findProduct);
+    console.log("cart", cart);
+    console.log("product", product);
+
+    if (findProduct) {
+      return setCart((prev) =>
+        prev.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1 };
+          }
+          return item;
+        })
+      );
+    } else {
+      setCart((prev) => [...prev, { id, image, price, desc, quantity: 1 }]);
+    }
+  };
+
   return (
     <section className="bg-[#d2e4e0] py-[75px] md:py-[100px] lg:py-[150px] bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e832f6a790e744037d5a35a_Green%20Lines.svg')] bg-no-repeat  bg-[bottom_right]">
       <div className="w-[95%] mx-auto max-w-[1450px] grid md:grid-cols-2 gap-x-[25px] gap-y-[25px] lg:gap-x-[50px] lg:gap-y-[50px] items-center ">
+        {JSON.stringify(cart)}
         <div className="max-w-[600px]">
           <h2 className=" mb-[30px] text-[14px] font-[500] leading-[1.6em] tracking-[1px]  ">
             {product?.time}
@@ -40,7 +66,10 @@ const Product = ({ params }: { params: { type: string } }) => {
             <button className="section-btn !w-full !bg-[10px] !pl-[20px] hover:!bg-[25px]  hover:!pl-[40px]  !bg-[#081158] !text-white bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')] col-span-2 ">
               buy now
             </button>
-            <button className="section-btn !w-full !bg-[10px] !pl-[20px] hover:!bg-[25px]  hover:!pl-[40px] !bg-[#081158] !text-white bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')]  col-span-2">
+            <button
+              className="section-btn !w-full !bg-[10px] !pl-[20px] hover:!bg-[25px]  hover:!pl-[40px] !bg-[#081158] !text-white bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')]  col-span-2"
+              onClick={product ? () => addToCart(product) : undefined}
+            >
               add to cart
             </button>
           </div>
