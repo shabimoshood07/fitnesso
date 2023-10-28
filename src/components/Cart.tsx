@@ -1,11 +1,15 @@
 "use client";
 import { useGlobalContext } from "@/lib/context";
+import CartList from "./CartList";
+
 const Cart = () => {
-  const { showCart, setShowCart } = useGlobalContext();
+  const { cart, setCart, setShowCart, showCart } = useGlobalContext();
   return (
     <div
       className={`${
-        showCart ? "h-screen" : "!h-0 duration-700 opacity-0 -translate-y-[20px]"
+        showCart
+          ? "h-screen"
+          : "!h-0 duration-700 opacity-0 -translate-y-[20px]"
       } duration-500 overflow-hidden fixed cart  top-0 left-0 z-10 h-screen w-screen flex  bg-[#fff]   shadow-xl `}
     >
       <div
@@ -40,11 +44,18 @@ const Cart = () => {
         </div>
 
         {/* Cart List */}
+
         <div className="cart-list px-[20px] py-[100px] flex-1 flex justify-center flex-col items-center">
-          <h1 className=" mb-[15px] font-[600] ">Nothing here!</h1>
-          <p className="leading-[1.6rem] text-[14px] text-center">
-            Browse around my shop to add fitness programs or nutrition plans
-          </p>
+          {cart.length === 0 ? (
+            <>
+              <h1 className=" mb-[15px] font-[600] ">Nothing here!</h1>
+              <p className="leading-[1.6rem] text-[14px] text-center">
+                Browse around my shop to add fitness programs or nutrition plans
+              </p>
+            </>
+          ) : (
+            <CartList />
+          )}
         </div>
 
         {/* Cart footer */}
