@@ -48,7 +48,6 @@ const Product = ({ params }: { params: { type: string } }) => {
     <>
       <section className="bg-[#d2e4e0] py-[75px] md:py-[100px] lg:py-[150px] bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e832f6a790e744037d5a35a_Green%20Lines.svg')] bg-no-repeat  bg-[bottom_right]">
         <div className="w-[95%] mx-auto max-w-[1450px] grid md:grid-cols-2 gap-x-[25px] gap-y-[25px] lg:gap-x-[50px] lg:gap-y-[50px] items-center ">
-          {JSON.stringify(cart)}
           <div className="max-w-[600px]">
             <h2 className=" mb-[30px] text-[14px] font-[500] leading-[1.6em] tracking-[1px]  ">
               {product?.time}
