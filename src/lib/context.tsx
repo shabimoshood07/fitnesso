@@ -6,6 +6,7 @@ import {
   Dispatch,
   SetStateAction,
   useState,
+  useEffect,
 } from "react";
 
 interface ContextProps {
@@ -13,8 +14,10 @@ interface ContextProps {
   setShowCart: Dispatch<SetStateAction<boolean>>;
   cart: Cart[];
   setCart: Dispatch<SetStateAction<Cart[]>>;
+  subtotal: number;
+  setSubtotal: Dispatch<SetStateAction<number>>;
+  increaseQuantity: (id: number) => void;
 }
-
 type Cart = {
   id: number;
   image: string;
@@ -28,13 +31,48 @@ const AppContext = createContext<ContextProps>({
   setShowCart: () => {},
   cart: [],
   setCart: () => [],
+  subtotal: 0,
+  setSubtotal: () => {},
+  increaseQuantity: (id: number) => {},
 });
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState<Cart[]>([]);
+  const [subtotal, setSubtotal] = useState<number>(0);
+
+  useEffect(() => {
+    getSubtotal();
+  }, [cart]);
+
+  const getSubtotal = () => {
+    let total = 0;
+    cart.map((item) => (total += item.quantity * Number(item.price)));
+    setSubtotal(Number(total.toFixed(2)));
+  };
+  const increaseQuantity = (id: number) => {
+    setCart((prev) => {
+      return prev.map((item) => {
+        if (item.id === id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+    });
+  };
+
   return (
-    <AppContext.Provider value={{ showCart, setShowCart, cart, setCart }}>
+    <AppContext.Provider
+      value={{
+        showCart,
+        setShowCart,
+        cart,
+        setCart,
+        subtotal,
+        setSubtotal,
+        increaseQuantity,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

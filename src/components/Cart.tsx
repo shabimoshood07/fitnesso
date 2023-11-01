@@ -8,14 +8,14 @@ const Cart = () => {
     <div
       className={`${
         showCart
-          ? "h-screen"
-          : "!h-0 duration-700 opacity-0 -translate-y-[20px]"
+          ? "h-screen  min-[480px]:h-[max-content]"
+          : "!h-0 !min-h-0  duration-700 opacity-0  -translate-y-[20px]"
       } duration-500 overflow-hidden fixed cart  top-0 left-0 z-10 h-screen w-screen flex  bg-[#fff]   shadow-xl `}
     >
       <div
         className={`${
           showCart
-            ? "translate-y-0 opacity-100 transition-transform  duration-500 z-auto"
+            ? "translate-y-0 opacity-100 transition-transform w-full  duration-500 z-auto"
             : "-translate-y-[20px] duration-300 ease-in opacity-0 -z-10 lg:z-0"
         } flex flex-col `}
       >
@@ -45,18 +45,16 @@ const Cart = () => {
 
         {/* Cart List */}
 
-        <div className="cart-list px-[20px] py-[100px] flex-1 flex justify-center flex-col items-center">
-          {cart.length === 0 ? (
-            <>
-              <h1 className=" mb-[15px] font-[600] ">Nothing here!</h1>
-              <p className="leading-[1.6rem] text-[14px] text-center">
-                Browse around my shop to add fitness programs or nutrition plans
-              </p>
-            </>
-          ) : (
-            <CartList />
-          )}
-        </div>
+        {cart.length === 0 ? (
+          <div className="cart-list px-[20px] py-[100px] flex-1 flex justify-center flex-col items-center">
+            <h1 className=" mb-[15px] font-[600] ">Nothing here!</h1>
+            <p className="leading-[1.6rem] text-[14px] text-center">
+              Browse around my shop to add fitness programs or nutrition plans
+            </p>
+          </div>
+        ) : (
+          <CartList />
+        )}
 
         {/* Cart footer */}
         <div></div>

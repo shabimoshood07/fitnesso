@@ -18,15 +18,14 @@
 @media only screen and (min-width: 480px) {
   .cart {
     position: absolute;
-    height: 332px;
+    min-height: 332px;
     width: unset;
     top: 40px;
     bottom: 0;
     right: 10px;
     left: unset;
     border-radius: 10px;
-    max-width: 480px;
-    width: 320px;
+    width: 380px;
   }
 }
 

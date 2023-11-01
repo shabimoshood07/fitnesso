@@ -30,7 +30,7 @@ const FreeWorkoutPlans = ({ data }: { data: DataType[] }) => {
         return (
           <Link href={dat.link} key={dat.image}>
             <motion.div
-              className="rounded-md overflow-hidden hover duration-500  cursor-pointer flex justify-stretch flex-col items-stretch"
+              className="rounded-md overflow-hidden hover duration-500  h-full cursor-pointer flex justify-stretch flex-col items-stretch"
               custom={dat.id}
               initial="hidden"
               whileInView="visible"

@@ -25,11 +25,6 @@ const Product = ({ params }: { params: { type: string } }) => {
   const addToCart = (product: Product) => {
     const { id, image, price, desc } = product;
     const findProduct = cart.find((product) => product.id === id);
-
-    console.log("findProduct", findProduct);
-    console.log("cart", cart);
-    console.log("product", product);
-
     if (findProduct) {
       return setCart((prev) =>
         prev.map((item) => {
@@ -66,7 +61,6 @@ const Product = ({ params }: { params: { type: string } }) => {
                 type="number"
                 className="py-[8px] px-[15px] h-[60px] w-full  text-[16px] leading-[20px] bg-[rgba(32,52,146,0.1)] outline-none rounded-[10px] "
                 defaultValue={quantity}
-                //   onChange={(e) => setQuantity(e.target.value)}
                 onChange={(e) => setQuantity(parseInt(e.target.value))}
               />
               <button className="section-btn !w-full !bg-[10px] !pl-[20px] hover:!bg-[25px]  hover:!pl-[40px]  !bg-[#081158] !text-white bg-[url('https://uploads-ssl.webflow.com/5e80894f63c557e083ed96b4/5e808dcb9d75512a65c99484_Vector%204.svg')] col-span-2 ">

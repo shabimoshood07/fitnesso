@@ -63,7 +63,7 @@ const HomeSectionThree = () => {
                     <div className="lg:flex justify-between flex-row-reverse items-start">
                       <div className="flex justify-start items-center lg:flex-col lg:justify-start">
                         <h3 className="text-[#ec8675] font-[400] font-parMark text-[14px] md:text-[16px]  leading-[1.1em] tracking-[1px] uppercase mb-[15px] lg:mb-0">
-                          {product.price}
+                          $ {product.price} USD
                         </h3>
                         <h3 className="text-[#afafaf] font-[400] font-parMark text-[12px]  leading-[1.1em] tracking-[1px] uppercase mb-[15px] ml-[15px]  line-through">
                           {product.prevPrice}
