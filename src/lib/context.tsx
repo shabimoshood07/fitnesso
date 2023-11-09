@@ -17,6 +17,8 @@ interface ContextProps {
   subtotal: number;
   setSubtotal: Dispatch<SetStateAction<number>>;
   increaseQuantity: (id: number) => void;
+  decreaseQuantity: (id: number) => void;
+  removeItemFromCart: (id: number) => void;
 }
 type Cart = {
   id: number;
@@ -34,6 +36,8 @@ const AppContext = createContext<ContextProps>({
   subtotal: 0,
   setSubtotal: () => {},
   increaseQuantity: (id: number) => {},
+  decreaseQuantity: (id: number) => {},
+  removeItemFromCart: (id: number) => {},
 });
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
@@ -50,6 +54,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     cart.map((item) => (total += item.quantity * Number(item.price)));
     setSubtotal(Number(total.toFixed(2)));
   };
+
   const increaseQuantity = (id: number) => {
     setCart((prev) => {
       return prev.map((item) => {
@@ -58,6 +63,29 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         }
         return item;
       });
+    });
+  };
+
+  const decreaseQuantity = (id: number) => {
+    setCart((prev) => {
+      return prev
+        .map((item) => {
+          if (item.id === id) {
+            if (item.quantity === 1) {
+              return null; // Remove the item from the array
+            } else {
+              return { ...item, quantity: item.quantity - 1 };
+            }
+          }
+          return item;
+        })
+        .filter(Boolean) as Cart[];
+    });
+  };
+
+  const removeItemFromCart = (id: number) => {
+    setCart((prev) => {
+      return prev.filter((item) => item.id !== id);
     });
   };
 
@@ -71,6 +99,8 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         subtotal,
         setSubtotal,
         increaseQuantity,
+        decreaseQuantity,
+        removeItemFromCart,
       }}
     >
       {children}

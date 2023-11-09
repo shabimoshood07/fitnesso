@@ -8,19 +8,19 @@ const Cart = () => {
     <div
       className={`${
         showCart
-          ? "h-screen  min-[480px]:h-[max-content]"
+          ? "h-screen  min-[480px]:h-[max-content] min-[480px]:max-h-[90vh] overflow-y-scroll"
           : "!h-0 !min-h-0  duration-700 opacity-0  -translate-y-[20px]"
       } duration-500 overflow-hidden fixed cart  top-0 left-0 z-10 h-screen w-screen flex  bg-[#fff]   shadow-xl `}
     >
       <div
         className={`${
           showCart
-            ? "translate-y-0 opacity-100 transition-transform w-full  duration-500 z-auto"
+            ? "translate-y-0 opacity-100 transition-transform w-full relative  duration-500 z-auto"
             : "-translate-y-[20px] duration-300 ease-in opacity-0 -z-10 lg:z-0"
         } flex flex-col `}
       >
         {/* Cart Header */}
-        <div className="cart-header flex justify-between items-center px-[24px] py-[16px] border-b">
+        <div className="cart-header flex justify-between items-center px-[24px] py-[16px] border-b sticky top-0 w-full bg-white z-[1]">
           <h1 className="text-[20px] leading-[1.1em] font-[600]  ">
             Your Cart
           </h1>
@@ -57,7 +57,7 @@ const Cart = () => {
         )}
 
         {/* Cart footer */}
-        <div></div>
+        {/* <div></div> */}
       </div>
     </div>
   );

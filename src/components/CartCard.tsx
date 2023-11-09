@@ -3,7 +3,9 @@ import { CartItem } from "../../type";
 import Image from "next/image";
 import { useGlobalContext } from "@/lib/context";
 const CartCard = ({ cartItem }: { cartItem: CartItem }) => {
-  const { increaseQuantity } = useGlobalContext();
+  const { increaseQuantity, decreaseQuantity, removeItemFromCart } =
+    useGlobalContext();
+
   return (
     <div className="mb-[20px]">
       <div className="flex  justify-start">
@@ -26,16 +28,19 @@ const CartCard = ({ cartItem }: { cartItem: CartItem }) => {
           <input
             type="number"
             className="py-[8px] px-[15px] h-[45px] w-full  text-[16px] leading-[20px] bg-[rgba(32,52,146,0.1)] outline-none rounded-[10px] "
-            defaultValue={cartItem.quantity}
-            // onChange={(e) => setQuantity(parseInt(e.target.value))}
+            value={cartItem.quantity}
             onChange={(e) => {
-              increaseQuantity(cartItem.id);
-              console.log(e);
+              Number(e.target.value) > cartItem.quantity
+                ? increaseQuantity(cartItem.id)
+                : decreaseQuantity(cartItem.id);
             }}
           />
         </div>
       </div>
-      <button className="text-[11px] tracking-[1px] leading[1.1em] text-[#afafaf] ">
+      <button
+        className="text-[11px] tracking-[1px] leading[1.1em] text-[#afafaf] "
+        onClick={() => removeItemFromCart(cartItem.id)}
+      >
         Remove
       </button>
     </div>
