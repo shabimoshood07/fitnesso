@@ -1,5 +1,5 @@
-# Project Name
-> Collaborator
+# Fitnesso  
+> Fitnesso
 > Live demo [_here_]https://fitnesso-nextjs.netlify.app/.
 
 ## Table of Contents
