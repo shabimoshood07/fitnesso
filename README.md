@@ -1,6 +1,6 @@
 # Fitnesso  
 > Fitnesso
-> Live demo [_here_]https://fitnesso-nextjs.netlify.app/.
+> Live demo [_here_](https://fitnesso-nextjs.netlify.app/).
 
 ## Table of Contents
 * [General Info](#general-information)
